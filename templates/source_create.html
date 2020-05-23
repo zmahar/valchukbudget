@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Source | Valchuk Budget Application</title>
+  </head>
+
+  <body>
+    <h2>Please add your new source.</h2>
+    <form action="/sources/create" method="post">
+    	<label>Source Name:</label><input type="text" name="sourcename"></input>
+    	<p>
+    	<label>Amount:</label><input type="text" name="amount"></input>
+    	<p>
+    	<label>Source Currency:</label><input type="text" name="sourcecurrency"></input>
+    	<p>
+    	<label>Source Type:</label><input type="text" name="sourcetype"></input>
+      <p>
+    	<input type="submit" value="Create Source"> <input type="button" value="Back" onclick="window.history.back()" />
+    </form>
+  </body>
+</html>

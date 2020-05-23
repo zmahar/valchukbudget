@@ -1,0 +1,34 @@
+<h1>Valchuk Budget</h1>
+
+Exchange rate: {{ exchangeRate }}
+<p>
+<table style="border-collapse: collapse;" border = "1">
+	<tbody>
+		<tr style="background-color: #BEBEBE;">
+			<td>Source</td>
+			<td>Amount</td>
+			<td>Currency</td>
+			<td>Type</td>
+		</tr>
+	{% for source in sources %}
+		<tr>
+			<td>{{ source[0] }}</td>
+			<td>{{ source[1] }}</td>
+			<td>{{ source[2] }}</td>
+			<td>{{ source[3] }}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+<p>
+<form action="/sources/create">
+    <input type="submit" value="Create Source" />
+</form>
+<form action="/sources/edit">
+    <input type="submit" value="Edit" />
+</form>
+<input type="button" value="Back" onclick="window.history.back()" />
+<p>
+Total EUR: {{ eurSum }}
+<p>
+<h3>Grand Total USD: {{ grandTotal }}</h3>

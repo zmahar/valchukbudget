@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Source | Valchuk Budget Application</title>
+  </head>
+
+ 	<body>
+	    <h2>Here you can edit your records.</h2>
+
+		<form action="/sources/edit" method="post">
+			<table style="border-collapse: collapse;" border = "1">
+				<tbody>
+					<tr style="background-color: #BEBEBE;">
+						<td>Source</td>
+						<td>Amount</td>
+						<td>Currency</td>
+						<td>Type</td>
+					</tr>
+				{% for source in sources %}
+					<tr>
+						<td>{{ source[0] }}</td>
+						<input type="hidden" name="source_name" value="{{ source[0] }}"></input>
+						<td><input type="text" name="amount" value="{{ source[1] }}"></input></td>
+						<td>{{ source[2] }}</td>
+						<td>{{ source[3] }}</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+			<input type="submit" value="Save Changes"> <input type="button" value="Back" onclick="window.history.back()" />
+		</form>
+	</body>
+</html>
